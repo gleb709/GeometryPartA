@@ -1,13 +1,12 @@
 package geometry.service.impl;
 
 import geometry.entity.Ball;
-import geometry.entity.PointOnPlane;
 import geometry.singlton.Basket;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class BallServiceImplTest {
     private double[] ballsSurfaceAreaExpected;
@@ -54,6 +53,6 @@ public class BallServiceImplTest {
                 ball[i] = true;
             }
         }
-        assertFalse(ball[0]);
+        Assert.assertFalse(ball[0]);
     }
 }
