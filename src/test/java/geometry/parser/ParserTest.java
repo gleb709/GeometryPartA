@@ -36,7 +36,7 @@ public class ParserTest {
     public void testBallDataCreator() {
         int ARRAY_SIZE_Y = 4;
         String divideSymbol = " ";
-        InfoBallValidator infoBallValidator = new InfoBallValidator();    // не работает из=за того что в валидаторе есть logger
+        InfoBallValidator infoBallValidator = new InfoBallValidator();
         int[][] actualData = new int[list.size()-1][ARRAY_SIZE_Y];
         for(int i = 0; i < list.size() - 1; i++){
             String[] subString = list.get(i).split(divideSymbol);

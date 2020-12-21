@@ -44,31 +44,6 @@ public class BallServiceImplTest {
     }
 
     @Test
-    public void testCalculateBallVolumeRatio() {
-        Basket basket = Basket.getInstance();
-        final int X_MAX_SIZE = 200;
-
-        PointOnPlane point = new PointOnPlane();
-        point.setPointX((int)(5 + Math.random()*X_MAX_SIZE));
-
-        double[] ballVolumeRatio = new double[basket.getBasketSize()];
-        double firstBallPieceVolume;
-        double secondBallPieceVolume;
-        for(int i = 0; i < basket.getBasketSize(); i++){
-            System.out.println(point.getPointX());
-            if(basket.getBallFromBasket(i).getBallPositionX() - basket.getBallFromBasket(i).getBallRadius() < point.getPointX() &&
-            basket.getBallFromBasket(i).getBallPositionX() + basket.getBallFromBasket(i).getBallRadius() > point.getPointX()){
-                firstBallPieceVolume = Math.PI * Math.pow(basket.getBallFromBasket(i).getBallRadius() - Math.abs(basket.getBallFromBasket(i).getBallPositionX() - point.getPointX()), 2) *
-                        (2 * basket.getBallFromBasket(i).getBallRadius() - basket.getBallFromBasket(i).getBallRadius() - Math.abs(basket.getBallFromBasket(i).getBallPositionX() - point.getPointX() / 3));
-                        secondBallPieceVolume = 4/3 * Math.PI * Math.pow(basket.getBallFromBasket(i).getBallRadius(),3) - firstBallPieceVolume;
-                ballVolumeRatio[i] = secondBallPieceVolume/firstBallPieceVolume;
-                System.out.println(secondBallPieceVolume);
-                System.out.println(firstBallPieceVolume);
-            }
-        }
-    }
-
-    @Test
     public void testIsBallContactCoordinatePlanes() {
         Basket basket = Basket.getInstance();
         boolean[] ball = new boolean[basket.getBasketSize()];
